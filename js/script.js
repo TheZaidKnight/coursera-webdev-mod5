@@ -156,14 +156,14 @@ dc.loadMenuCategories = function () {
     buildAndShowCategoriesHTML);
 };
 
-
+var response2=buildAndShowMenuItemsHTML;
 // Load the menu items view
 // 'categoryShort' is a short_name for a category
 dc.loadMenuItems = function (categoryShort) {
   showLoading("#main-content");
   $ajaxUtils.sendGetRequest(
     menuItemsUrl + categoryShort + ".json",
-    buildAndShowMenuItemsHTML);
+    response2);
 };
 
 
