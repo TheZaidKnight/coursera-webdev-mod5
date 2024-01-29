@@ -79,35 +79,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // so it can be called when server responds with the categories data.
 // Builds HTML for the home page based on categories array
 // returned from the server.
-function buildAndShowHomeHTML (categories) {
-
-  // Load home snippet page
-  $ajaxUtils.sendGetRequest(
-    homeHtmlUrl,
-    function (homeHtml) {
-
-// TODO: STEP 2: Call chooseRandomCategory, passing it retrieved 'categories'
-var chosenCategory = chooseRandomCategory(categories);
-
-// TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet
-// with the chosen category from STEP 2.
-var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategory.short_name);
-
-// TODO: STEP 4: Insert the produced HTML in STEP 3 into the main page
-insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
-
-
-    },
-    false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
-}
-// Given array of category objects, returns a random category object.
-function chooseRandomCategory (categories) {
-  // Choose a random index into the array (from 0 inclusively until array length (exclusively))
-  var randomArrayIndex = Math.floor(Math.random() * categories.length);
-
-  // return category object with that randomArrayIndex
-  return categories[randomArrayIndex];
-}
 var response=buildAndShowHomeHTML;
 // *** start ***
 // On first load, show home view
@@ -146,6 +117,35 @@ $ajaxUtils.sendGetRequest(
 //}
 
 
+function buildAndShowHomeHTML (categories) {
+
+  // Load home snippet page
+  $ajaxUtils.sendGetRequest(
+    homeHtmlUrl,
+    function (homeHtml) {
+
+// TODO: STEP 2: Call chooseRandomCategory, passing it retrieved 'categories'
+var chosenCategory = chooseRandomCategory(categories);
+
+// TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet
+// with the chosen category from STEP 2.
+var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategory.short_name);
+
+// TODO: STEP 4: Insert the produced HTML in STEP 3 into the main page
+insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
+
+
+    },
+    false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
+}
+// Given array of category objects, returns a random category object.
+function chooseRandomCategory (categories) {
+  // Choose a random index into the array (from 0 inclusively until array length (exclusively))
+  var randomArrayIndex = Math.floor(Math.random() * categories.length);
+
+  // return category object with that randomArrayIndex
+  return categories[randomArrayIndex];
+}
 
 
 // Load the menu categories view
