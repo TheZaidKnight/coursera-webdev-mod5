@@ -115,27 +115,27 @@ $ajaxUtils.sendGetRequest(
 
 // Builds HTML for the home page based on categories array
 // returned from the server.
-function buildAndShowHomeHTML (categories) {
+//function buildAndShowHomeHTML (categories) {
 
   // Load home snippet page
-  $ajaxUtils.sendGetRequest(
-    homeHtmlUrl,
-    function (homeHtml) {
+//  $ajaxUtils.sendGetRequest(
+//    homeHtmlUrl,
+//    function (homeHtml) {
 
 // TODO: STEP 2: Call chooseRandomCategory, passing it retrieved 'categories'
-var chosenCategory = chooseRandomCategory(categories);
+//var chosenCategory = chooseRandomCategory(categories);
 
 // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet
 // with the chosen category from STEP 2.
-var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategory.short_name);
+//var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategory.short_name);
 
 // TODO: STEP 4: Insert the produced HTML in STEP 3 into the main page
-insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
+//insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
 
 
-    },
-    false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
-}
+//    },
+//    false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
+//}
 
 
 // Given array of category objects, returns a random category object.
