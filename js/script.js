@@ -108,13 +108,13 @@ function chooseRandomCategory (categories) {
   // return category object with that randomArrayIndex
   return categories[randomArrayIndex];
 }
-
+var response=buildAndShowHomeHTML;
 // *** start ***
 // On first load, show home view
 showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
-  buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
+  response, // ***** <---- TODO: STEP 1: Substitute [...] ******
   true);
  // Explicitly setting the flag to get JSON from server processed into an object literal
 });
