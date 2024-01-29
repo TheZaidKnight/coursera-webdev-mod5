@@ -33,21 +33,6 @@ ajaxUtils.sendGetRequest =
     request.open("GET", requestUrl, true);
     request.send(null); // for POST only
   };
-// Define the responseHandler function
-//function responseHandler(data) {
-  // Check if data is an array (you might need to adjust this based on your server response)
-  //if (Array.isArray(data)) {
-    // Iterate over the array and log each element to the console
-    //data.forEach(function (item) {
-      //console.log(item);
-    //});
-  //} else {
-    // Log the entire data object to the console
-    //console.log(data);
-  //}
-//}
-
-
 
 
 // Only calls user provided 'responseHandler'
@@ -76,8 +61,6 @@ function handleResponse(request,
 
 // Expose utility to the global object
 global.$ajaxUtils = ajaxUtils;
-// Make an AJAX GET request using the utility
-//$ajaxUtils.sendGetRequest('your_api_endpoint', responseHandler());
 
 
 })(window);
